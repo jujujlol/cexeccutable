@@ -1,4 +1,4 @@
-name: Download Artifact
+name: Clone and Upload Artifacts
 
 on:
   push:
@@ -6,19 +6,19 @@ on:
       - main
 
 jobs:
-  download:
+  clone_and_upload:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Download file with wget
+      - name: Clone Hugging Face repository
         run: |
-          wget https://huggingface.co/spaces/Panisis/Why/resolve/main/GTA%204%20LITE%20By%20OptiJuegos.7z?download=true -O archivo.7z
+          git clone https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/.gitattributes?download=true
 
-      - name: Upload artifact
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: archivo
-          path: archivo.7z
+          name: artifacts
+          path: repository-name/**  # Ajusta la ruta según lo que necesites subir
