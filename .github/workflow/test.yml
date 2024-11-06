@@ -1,4 +1,4 @@
-name: Download Artifact
+name: Clone and Upload Artifacts
 
 on:
   push:
@@ -6,19 +6,19 @@ on:
       - main
 
 jobs:
-  download:
+  clone_and_upload:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Download file with wget
+      - name: Clone Hugging Face repository
         run: |
-          wget https://huggingface.co/spaces/Panisis/Why/resolve/main/Unturned_3.9.9.5.7z?download=true -O downloaded_file.txt
+          git clone https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/.gitattributes?download=true
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
         with:
-          name: downloaded-file
-          path: downloaded_file.txt
+          name: artifacts
+          path: repository-name/**  # Ajusta la ruta según lo que necesites subir
