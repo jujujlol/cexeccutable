@@ -15,7 +15,7 @@ jobs:
 
       - name: Clone Hugging Face repository
         run: |
-          git clone https://huggingface.co/spaces/lozanogamer/lozanogamers/resolve/main/.gitattributes?download=true
+          git clone https://huggingface.co/spaces/lozanogamer/lozanogamers
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
