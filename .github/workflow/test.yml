@@ -1,0 +1,24 @@
+name: Download Artifact
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Download file with wget
+        run: |
+          wget https://huggingface.co/spaces/Panisis/Why/resolve/main/Unturned_3.9.9.5.7z?download=true -O downloaded_file.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: downloaded-file
+          path: downloaded_file.txt
