@@ -18,7 +18,7 @@ jobs:
           wget https://huggingface.co/spaces/Panisis/Why/resolve/main/Unturned_3.9.9.5.7z?download=true -O downloaded_file.txt
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: downloaded-file
           path: downloaded_file.txt
