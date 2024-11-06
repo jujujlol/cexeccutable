@@ -15,10 +15,10 @@ jobs:
 
       - name: Download file with wget
         run: |
-          wget https://huggingface.co/spaces/Panisis/Why/resolve/main/Unturned_3.9.9.5.7z?download=true -O downloaded_file.txt
+          wget https://huggingface.co/spaces/Panisis/Why/resolve/main/GTA%204%20LITE%20By%20OptiJuegos.7z?download=true -O archivo.7z
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: downloaded-file
-          path: downloaded_file.txt
+          name: archivo
+          path: archivo.7z
